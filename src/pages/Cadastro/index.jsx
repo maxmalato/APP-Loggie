@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom"
+import Botao from "../../components/Botao"
+import CustomInput from "../../components/CustomInput"
+import Header from "../../components/Header"
 
 export default function Cadastro() {
     return (
-        <div className="flex flex-col gap-6 items-center">
-            <h2 className="font-bold text-2xl text-center">Cadastro do Usuário</h2>
+        <div className="flex flex-col items-center">
+            <Header label="Cadastro" />
 
-            <form className="flex flex-col gap-4">
-                <input className="p-3 border border-slate-700 rounded-full" type="text" placeholder="Nome" />
-                <input className="p-3 border border-slate-700 rounded-full" type="email" placeholder="E-mail" />
-                <input className="p-3 border border-slate-700 rounded-full" type="password" placeholder="Senha" />
-                <input className="p-3 border border-slate-700 rounded-full" type="password" placeholder="Repita sua senha" />
-                
-                <button className="px-10 py-2 bg-slate-700 text-white rounded-full">Cadastrar</button>
+            <form className="flex flex-col gap-4 w-72">
+                <CustomInput type="text" placeholder="Nome" />
+                <CustomInput type="email" placeholder="Email" />
+                <CustomInput type="password" placeholder="Senha" />
+                <CustomInput type="password" placeholder="Repita sua senha" />
             </form>
 
-           <Link to={'/login'} className="">Já tem cadastro? Clique aqui!</Link>
+            <Botao label="Cadastrar" />
+
+            <Link to={'/login'}>Já tem cadastro? Clique aqui!</Link>
         </div>
     )
 }

@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom"
+import Botao from "../../components/Botao"
+import CustomInput from "../../components/CustomInput"
+import Header from "../../components/Header"
 
 export default function Login() {
     return (
-        <div>
-            <h2>Login do Usuário</h2>
-
-            <form action="">
-                <input type="email" placeholder="Seu e-mail" />
-                <input type="password" placeholder="Sua senha" />
+        <div className="flex flex-col items-center">
+            <Header label="Login" />
+            
+            <form className="flex flex-col gap-4 w-72">
+                <CustomInput type="email" placeholder="Email" />
+                <CustomInput type="password" placeholder="Senha" />
             </form>
 
-            <Link to={'/'}>Não tem cadastro? Clique aqui!</Link>
+            <Botao label="Acessar"  />
 
+            <Link to={'/'}>Não tem cadastro? Clique aqui!</Link>
         </div>
     )
 }
