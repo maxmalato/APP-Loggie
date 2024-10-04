@@ -1,11 +1,15 @@
-export default function CustomInput({ type, placeholder }) {
+import { forwardRef } from "react"
+
+const CustomInput = forwardRef((props, ref) => {
     return (
         <>
             <input
-                type={type}
-                placeholder={placeholder}
                 className="py-2 px-4 rounded-lg focus:outline-none"
+                ref={ref}
+                {...props}
             />
         </>
     )
-}
+})
+
+export default CustomInput;
