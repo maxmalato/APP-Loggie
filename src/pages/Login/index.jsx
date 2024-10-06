@@ -9,8 +9,8 @@ export default function Login() {
             <Header label="Login" />
 
             <form className="flex flex-col gap-4 w-72">
-                <CustomInput type="email" placeholder="Email" />
-                <CustomInput type="password" placeholder="Senha" />
+                <CustomInput type="email" placeholder="Email" required />
+                <CustomInput type="password" placeholder="Senha" required />
 
                 <CustomButton label="Acessar" />
             </form>
