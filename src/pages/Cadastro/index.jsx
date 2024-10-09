@@ -7,6 +7,8 @@ import CustomInput from "../../components/CustomInput"
 import CustomButton from "../../components/CustomButton"
 import Header from "../../components/Header"
 import MessageAccess from "../../components/MessageAccess"
+import ValidateEmail from "../../components/ValidateEmail.jsx"
+import ValidatePassword from "../../components/ValidatePassword.jsx"
 
 export default function Cadastro() {
     const nameRef = useRef()
@@ -17,20 +19,10 @@ export default function Cadastro() {
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
 
-    const validatePassword = (password) => {
-        const minLength = 6
-        return password.length >= minLength
-    }
-
-    const validateEmail = (email) => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(String(email).toLocaleLowerCase())
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!validateEmail(emailRef.current.value)) {
+        if (!ValidateEmail(emailRef.current.value)) {
             setMessage("Por favor, informe um e-mail válido.")
             setMessageType("error")
             return
@@ -42,7 +34,7 @@ export default function Cadastro() {
             return
         }
 
-        if (!validatePassword(passwordRef.current.value || confirmPasswordRef.current.value)) {
+        if (!ValidatePassword(passwordRef.current.value || confirmPasswordRef.current.value)) {
             setMessage("Precisa ter mais de seis dígitos.")
             setMessageType("error")
             return
@@ -59,9 +51,14 @@ export default function Cadastro() {
             setMessageType("success")
 
         } catch (error) {
-            setMessage("Erro de envio 422. Verifique com o suporte.")
-            setMessageType("Error")
-            console.log(error)
+            if (error.response.data.message) {
+                setMessage("O e-mail já está em uso. Faça o Login.")
+                setMessageType("error")
+            } else {
+                setMessage("Erro de envio 422. Verifique com o suporte.")
+                setMessageType("Error")
+                console.log(error)
+            }
         }
     }
 
