@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import api from "../../services/api"
+import Logo from "../../assets/logo-loggie.png"
 
 function ListaUsuario() {
     const [users, setUsers] = useState([])
@@ -21,15 +22,16 @@ function ListaUsuario() {
     }, [])
 
     return (
-        <div className="flex flex-col">
-            <h2 className="text-2xl text-center">Lista de Usuários</h2>
-            <ul className="flex flex-wrap gap-6 justify-center	">
+        <div className="px-2 flex flex-col items-center">
+            <img src={Logo} className="size-40" />
+            <h2 className="text-2xl font-semibold text-center mb-3">Lista de Usuários</h2>
+            <ul className="flex flex-wrap gap-4 justify-center">
                 {users.length > 0 ? (
                     users.map((user) => (
                         <li key={user.id} className="bg-white rounded-lg p-3 flex flex-col">
-                            <p>ID: {user.id}</p>
-                            <p>Nome: {user.name}</p>
-                            <p>E-mail: {user.email}</p>
+                            <p><span className="font-bold">ID:</span> {user.id}</p>
+                            <p><span className="font-bold">Nome:</span> {user.name}</p>
+                            <p><span className="font-bold">E-mail:</span> {user.email}</p>
                         </li>
                     ))
                 ) : (
