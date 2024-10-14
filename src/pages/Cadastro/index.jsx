@@ -19,6 +19,13 @@ export default function Cadastro() {
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
 
+    function clearInputs() {
+        nameRef.current.value = ''
+        emailRef.current.value = ''
+        passwordRef.current.value = ''
+        confirmPasswordRef.current.value = ''
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -49,6 +56,8 @@ export default function Cadastro() {
             })
             setMessage("Cadastrado com sucesso!")
             setMessageType("success")
+
+            clearInputs()
 
         } catch (error) {
             if (error.response.data.message) {
