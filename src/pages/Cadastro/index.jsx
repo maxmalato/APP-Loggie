@@ -73,7 +73,7 @@ export default function Cadastro() {
 
     return (
         <div className="flex flex-col items-center">
-            <Header label="Cadastro" />
+            <Header label="Cadastro de Usuário" />
 
             <form className="flex flex-col gap-4 w-72" onSubmit={handleSubmit}>
                 <CustomInput type="text" placeholder="Nome" ref={nameRef} required />

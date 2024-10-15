@@ -24,18 +24,13 @@ function ListaUsuario() {
 
     return (
         <div className="p-3 flex flex-col items-center">
-            <Link to={'/login'}>
-                <button className="absolute left-10 top-20 lg:left-40 lg:top-20 bg-white p-2 rounded-lg hover:bg-slate-100 pointer">
-                    Voltar
-                </button>
-            </Link>
             <Header label="Lista de Usuários" />
-            <ul className="flex flex-wrap gap-4 justify-center 2xl:grid 2xl:grid-cols-4">
+            <ul className="flex flex-wrap gap-4 justify-center drop-shadow-md 2xl:grid 2xl:grid-cols-4">
                 {users.length > 0 ? (
                     users.map((user) => (
-                        <li key={user.id} className="bg-white rounded-lg p-3 w-[340px]">
-                            <p><span className="font-bold">ID:</span> {user.id}</p>
-                            <p><span className="font-bold">Nome:</span> {user.name}</p>
+                        <li key={user.id} className="bg-white rounded-lg p-3 w-[340px] border-2 border-b-green-600">
+                            <p><span className="font-bold">Id:</span> {user.id}</p>
+                            <p className="my-2"><span className="font-bold">Nome:</span> {user.name}</p>
                             <p><span className="font-bold">E-mail:</span> {user.email}</p>
                         </li>
                     ))
@@ -45,6 +40,10 @@ function ListaUsuario() {
                     </p>
                 )}
             </ul>
+
+            <button className="bg-gradient-to-r from-[#19fc56] to-[#5cfc88] p-2 rounded-lg mt-10 font-semibold">
+                <Link to={'/login'}>Voltar</Link>
+            </button>
         </div>
     )
 }

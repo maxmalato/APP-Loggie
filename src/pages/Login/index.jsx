@@ -58,7 +58,7 @@ export default function Login() {
 
     return (
         <div className="flex flex-col items-center">
-            <Header label="Login" />
+            <Header label="Entrar" />
 
             <form className="flex flex-col gap-4 w-72" onSubmit={handleSubmit}>
                 <CustomInput type="email" placeholder="Email" ref={emailRef} required />
