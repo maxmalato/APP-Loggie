@@ -18,6 +18,7 @@ export default function Login() {
 
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -35,6 +36,8 @@ export default function Login() {
         }
 
         try {
+            setIsLoading(true)
+
             const { data: token } = await api.post('/login', {
                 email: emailRef.current.value,
                 password: passwordRef.current.value,
@@ -53,6 +56,8 @@ export default function Login() {
                 setMessage("Erro no servidor. Tente mais tarde.")
                 console.log(error)
             }
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -66,7 +71,7 @@ export default function Login() {
 
                 <MessageAccess message={message} type={messageType} />
 
-                <CustomButton label="Acessar" />
+                <CustomButton label="Acessar" isLoading={isLoading} />
             </form>
 
             <Link to={'/'}>Não tem cadastro? Clique aqui!</Link>

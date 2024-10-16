@@ -1,6 +1,6 @@
 import Logo from "../assets/logo-loggie.png"
 
-export default function Header({ label }) {
+function Header({ label }) {
     return (
         <div className="flex flex-col items-center">
             <img src={Logo} className="size-40" />
@@ -8,3 +8,5 @@ export default function Header({ label }) {
         </div>
     )
 }
+
+export default Header
