@@ -18,6 +18,7 @@ export default function Cadastro() {
 
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
+    const [isloading, setIsLoading ] = useState(false)
 
     function clearInputs() {
         nameRef.current.value = ''
@@ -48,6 +49,8 @@ export default function Cadastro() {
         }
 
         try {
+            setIsLoading(true)
+
             await api.post('/register', {
                 name: nameRef.current.value,
                 email: emailRef.current.value,
@@ -68,6 +71,8 @@ export default function Cadastro() {
                 setMessageType("Error")
                 console.log(error)
             }
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -83,7 +88,7 @@ export default function Cadastro() {
 
                 <MessageAccess message={message} type={messageType} />
 
-                <CustomButton label="Cadastrar" />
+                <CustomButton label="Cadastrar" isLoading={isloading} />
             </form>
 
             <Link to={'/login'}>Já tem cadastro? Clique aqui!</Link>
