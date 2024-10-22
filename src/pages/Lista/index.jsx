@@ -41,7 +41,7 @@ function ListaUsuario() {
                 )}
             </ul>
 
-            <button className="bg-gradient-to-r from-[#19fc56] to-[#5cfc88] p-2 rounded-lg mt-10 font-semibold">
+            <button className="bg-gradient-to-r from-[#19fc56] to-[#5cfc88] p-2 rounded-lg mt-10 font-semibold w-28">
                 <Link to={'/login'}>Voltar</Link>
             </button>
         </div>

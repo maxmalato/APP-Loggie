@@ -82,7 +82,7 @@ export default function Cadastro() {
 
             <form className="flex flex-col gap-4 w-72" onSubmit={handleSubmit}>
                 <CustomInput type="text" placeholder="Nome" ref={nameRef} required />
-                <CustomInput type="text" placeholder="Email" ref={emailRef} required />
+                <CustomInput type="email" placeholder="Email" ref={emailRef} required />
                 <CustomInput type="password" placeholder="Senha" ref={passwordRef} required />
                 <CustomInput type="password" placeholder="Repita sua senha" ref={confirmPasswordRef} required />
 
