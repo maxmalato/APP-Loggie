@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState } from "react"
 import api from "../../services/api.js"
 
 // COMPONENTES
@@ -18,7 +18,7 @@ export default function Cadastro() {
 
     const [message, setMessage] = useState('')
     const [messageType, setMessageType] = useState('')
-    const [isloading, setIsLoading ] = useState(false)
+    const [isloading, setIsLoading] = useState(false)
 
     function clearInputs() {
         nameRef.current.value = ''
