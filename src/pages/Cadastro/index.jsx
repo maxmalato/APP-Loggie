@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import api from "../../services/api.js"
 
 // COMPONENTES
