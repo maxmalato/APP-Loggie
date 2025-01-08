@@ -1,8 +1,24 @@
-# React + Vite
+Loggie
+🚀 Loggie é uma aplicação web moderna desenvolvida com React, Prisma e MongoDB, projetada para simplificar o processo de cadastro e login com autenticação segura via JWT.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📝 Sobre o projeto
+Com o Loggie, usuários podem:
 
-Currently, two official plugins are available:
+Criar um cadastro rapidamente.
+Fazer login com segurança.
+Acessar uma lista de outros usuários cadastrados após a autenticação.
+Essa aplicação foi criada com o objetivo de demonstrar a integração entre frontend e backend, focando na segurança e na experiência do usuário.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚙️ Tecnologias utilizadas
+
+Frontend:
+- React
+- TailwindCSS (ou outro, se usado para estilização)
+
+Backend:
+- Node.js
+- Prisma ORM
+- MongoDB Atlas
+
+Autenticação:
+- JWT (JSON Web Token)
