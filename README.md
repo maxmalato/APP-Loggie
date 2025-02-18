@@ -18,7 +18,6 @@ Frontend:
 Backend:
 - Node.js
 - Prisma ORM
-- MongoDB Atlas
 
 Autenticação:
 - JWT (JSON Web Token)
